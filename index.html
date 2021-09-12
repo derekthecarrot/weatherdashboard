@@ -4,32 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-<header>
+<header >
 <h1>Weather Dashboard</h1>
 </header>
 <main>
     <!--search for a city and local storage-->
-<aside>
-    <div>
-
+<aside class="row">
+    <div class="col">
+          <form>text<input type="text" id ="city" name="city">
+        <button id="buttonSearch">Search</button>
+        </form>  
     </div>
-    <div>
-
+    <div class="col">
+        <p>Atlanta (example)</p>
     </div>
 </aside>
     <!--container of current city searched-->
-<div>
-    <div>
-        <h2>Placeholder State</h2>
+<div class="row">
+    <div class="col">
+        <h2 id="CityText">Placeholder State</h2>
         <ul>
-            <li>Temp</li>
-            <li>Wind</li>
-            <li>Humidity</li>
-            <li>UV Index</li>
+            <li id="Temp">Temp:</li>
+            <li id="Wind">Wind:</li>
+            <li id="Humidity">Humidity:</li>
+            <li id="UV-Index">UV Index:</li>
         </ul>
+    </div>
+    <div class="row">
+        <div class="card text-white bg-primary mb-3 col" style="max-width: 15rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Primary card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-primary mb-3" style="max-width: 15rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Primary card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-primary mb-3" style="max-width: 15rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Primary card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-primary mb-3" style="max-width: 15rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Primary card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card text-white bg-primary mb-3" style="max-width: 15rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Primary card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+            
     </div>
 </div>
 </main>
