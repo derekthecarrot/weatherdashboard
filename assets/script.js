@@ -1,15 +1,20 @@
-var city = "Raleigh"
-var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=45d16616d8a2ece41cc37e7a1088d048" + "&units=imperial";
+function createList(citySearch) {
+  $("#city-list").empty();
 
-fetch(queryURL)
-.then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-    document.querySelector("#CityText").innerText = city;
-    document.querySelector("#Temp").innerText = "Temperature: " + data.main.temp
-    document.querySelector("#Wind").innerText = "Wind: " + data.wind.speed
-    document.querySelector("#Humidity").innerText = "Humidity: " + data.main.humidity
-    document.querySelector("#UV-Index").innerText = "UV-Index: "
-  });
+  var keys = Object.keys(citySearch);
+  for (var i = 0; i < keys.length; i++) {
+    var cityLists = $("<button>");
+    cityLists.addClass("list-group-item list-group-item-action");
+
+    var splLoop = keys[i].toLowerCase().split(" ");
+    for (var j = 0; j < splLoop.length; j++) {
+      splLoop[j] =
+        splLoop[j].charAt(0).toUpperCase() + splLoop[j].substring(1);
+    }
+    var titleCasedCity = splLoop.join(" ");
+    cityLists.text(titleCasedCity);
+
+    $("#city-list").append(cityLists);
+  }
+}
+
