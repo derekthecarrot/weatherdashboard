@@ -140,3 +140,49 @@ function populateCityWeather(city, citySearch) {
     });
 }
 
+$(document).ready(function() {
+  var citySearchStringified = localStorage.getItem("citySearch");
+
+  var citySearch = JSON.parse(citySearchStringified);
+
+  if (citySearch == null) {
+    citySearch = {};
+  }
+
+  createList(citySearch);
+
+  $("#current-weather").hide();
+  $("#forecast-weather").hide();
+
+
+
+  $("#search-button").on("click", function(event) {
+    event.preventDefault();
+    let city = $("#city-input")
+      .val().trim().toLowerCase();
+
+    if (city != "") {
+      //Check to see if there is any text entered
+    
+      citySearch[city] = true;
+    localStorage.setItem("citySearch", JSON.stringify(citySearch));
+
+    populateCityWeather(city, citySearch);
+
+    $("#current-weather").show();
+    $("#forecast-weather").show();
+    }
+
+    
+  });
+
+  $("#city-list").on("click", "button", function(event) {
+    event.preventDefault();
+    let city = $(this).text();
+
+    populateCityWeather(city, citySearch);
+
+    $("#current-weather").show();
+    $("#forecast-weather").show();
+  });
+});
