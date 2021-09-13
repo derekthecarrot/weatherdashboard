@@ -159,10 +159,9 @@ $(document).ready(function() {
   $("#search-button").on("click", function(event) {
     event.preventDefault();
     let city = $("#city-input")
-      .val().trim().toLowerCase();
+      .val().trim()
 
     if (city != "") {
-      //Check to see if there is any text entered
     
       citySearch[city] = true;
     localStorage.setItem("citySearch", JSON.stringify(citySearch));
